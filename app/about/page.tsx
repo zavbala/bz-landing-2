@@ -29,8 +29,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-[#6E6E73] max-w-3xl mx-auto">
-              Transformamos la manera en que los pequeños y medianos negocios gestionan sus operaciones con inteligencia
-              artificial.
+              Tu agente de IA personal que transforma cómo gestionas y haces crecer tu negocio de manera más inteligente.
             </p>
           </div>
 
@@ -41,9 +40,8 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-[#1C1C1E]">Nuestra Misión</h2>
             </div>
             <p className="text-[#6E6E73] leading-relaxed">
-              Democratizar el acceso a herramientas empresariales avanzadas, permitiendo que cualquier negocio, sin
-              importar su tamaño, pueda competir en el mercado actual con tecnología de vanguardia y análisis
-              inteligente de datos.
+              Hacemos que cualquier negocio, sin importar su tamaño, acceda a herramientas inteligentes para
+              optimizar sus operaciones, crecer y competir en igualdad de condiciones..
             </p>
           </div>
 
@@ -65,7 +63,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-lg font-semibold text-[#1C1C1E]">Excelencia</h3>
               <p className="text-sm text-[#6E6E73]">
-                Nos comprometemos a entregar productos de la más alta calidad con atención al detalle.
+                Nos comprometemos a ofrecer soluciones modernas, eficientes y bien diseñadas.
               </p>
             </div>
 
@@ -73,9 +71,9 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-[#60A5FA]/10 rounded-full flex items-center justify-center mx-auto">
                 <Heart className="h-6 w-6 text-[#60A5FA]" />
               </div>
-              <h3 className="text-lg font-semibold text-[#1C1C1E]">Pasión</h3>
+              <h3 className="text-lg font-semibold text-[#1C1C1E]">Pasión y compromiso</h3>
               <p className="text-sm text-[#6E6E73]">
-                Amamos lo que hacemos y creemos en el poder transformador de la tecnología.
+              Disfrutamos lo que hacemos todos los días y nos comprometemos con la innovación y el crecimiento de las PYMES.
               </p>
             </div>
           </div>
@@ -85,28 +83,22 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1E] text-center">Nuestra Historia</h2>
             <div className="prose prose-gray max-w-none">
               <p className="text-[#6E6E73] leading-relaxed">
-                Biznes nació de la experiencia directa de trabajar con pequeños y medianos empresarios que luchaban
-                diariamente con sistemas desconectados, procesos manuales y la falta de información clara para tomar
-                decisiones importantes.
+                Biznes nació al trabajar de cerca con pequeñas empresas y ver que necesitaban más organización, procesos claros y un plan para crecer.
               </p>
               <p className="text-[#6E6E73] leading-relaxed">
-                En 2024, decidimos crear una solución integral que combinara la potencia de la inteligencia artificial
-                con la simplicidad que los negocios necesitan. Nuestro objetivo es claro: hacer que la gestión
-                empresarial sea más inteligente, más eficiente y más accesible para todos.
+                Por eso creamos herramientas sencillas, que usan inteligencia artificial, para ayudar a que todo sea más fácil y eficiente.
               </p>
               <p className="text-[#6E6E73] leading-relaxed">
-                Hoy, Biznes ayuda a cientos de negocios a optimizar sus operaciones, aumentar sus ventas y tomar
-                decisiones basadas en datos reales. Seguimos innovando cada día para ofrecer las mejores herramientas
-                del mercado.
+                Hoy, Biznes ayuda a las empresas a mejorar su día a día, vender más y tomar decisiones con confianza, apoyándolas a crecer de manera flexible, estratégica y competitiva.
               </p>
             </div>
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] rounded-2xl p-6 sm:p-8 text-white">
+          <div className="text-center bg-gradient-to-r from-[#8cc5f6] to-[#90cee0] rounded-2xl p-6 sm:p-8 text-white">
             <h2 className="text-2xl font-bold mb-4">¿Listo para transformar tu negocio?</h2>
             <p className="mb-6 opacity-90">
-              Únete a los miles de empresarios que ya confían en Biznes para hacer crecer sus negocios.
+              Únete a más empresarios que ya confían en Biznes para hacer crecer sus negocios.
             </p>
             <Link
               href="https://app.biznes.mx/register"

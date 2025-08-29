@@ -71,33 +71,41 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Pagos y Facturación</h2>
             <p className="text-gray-700 mb-4">
-              Los servicios de pago están sujetos a los planes de precios publicados. Los pagos son no reembolsables
-              excepto según se especifique en nuestra política de reembolsos.
+              Los servicios de pago están sujetos a los planes de precios publicados. Todos los pagos se procesan a través de Stripe, un proveedor de servicios de pago seguro.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Propiedad Intelectual</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Política de Reembolsos</h2>
+            <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <li>Los pagos son no reembolsables, excepto cuando se indique lo contrario en esta política.</li>
+              <li>Se pueden solicitar reembolsos dentro de 7 días posteriores a la compra, únicamente para la suscripción principal. Servicios adicionales (como integraciones personalizadas o consultoría) no son reembolsables.</li>
+              <li>Para solicitar un reembolso, envía un correo a <a href="biznesmx@gmail.com" className="text-blue-600 hover:text-blue-800">biznesmx@gmail.com</a> indicando tu nombre, correo asociado a la cuenta, plan contratado y motivo de la solicitud. Procesaremos tu solicitud en un plazo de 5 días hábiles.</li>
+              <li>Los reembolsos se realizarán mediante el mismo método de pago utilizado y pueden tardar hasta 7 días hábiles en reflejarse.</li>
+              <li>Nos reservamos el derecho de rechazar solicitudes de reembolso que no cumplan con esta política o que sean fraudulentas.</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Propiedad Intelectual</h2>
             <p className="text-gray-700 mb-4">
-              El servicio y su contenido original, características y funcionalidad son propiedad de Biznes y están
-              protegidos por derechos de autor, marcas comerciales y otras leyes de propiedad intelectual.
+              El servicio y su contenido original, características y funcionalidad son propiedad de Biznes y están protegidos por derechos de autor, marcas comerciales y otras leyes de propiedad intelectual.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Terminación</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Terminación</h2>
             <p className="text-gray-700 mb-4">
-              Podemos terminar o suspender tu cuenta inmediatamente, sin previo aviso, por cualquier motivo, incluyendo
-              el incumplimiento de estos Términos de Servicio.
+              Podemos terminar o suspender tu cuenta inmediatamente, sin previo aviso, por cualquier motivo, incluyendo el incumplimiento de estos Términos de Servicio.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Contacto</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Contacto</h2>
             <p className="text-gray-700">
-              Si tienes preguntas sobre estos Términos de Servicio, puedes contactarnos en:
-              <a href="mailto:legal@biznes.mx" className="text-blue-600 hover:text-blue-800 ml-1">
-                legal@biznes.mx
+              Si tienes preguntas sobre estos Términos de Servicio, puedes contactarnos en: 
+              <a href="/biznesmx@gmail.mx" className="text-blue-600 hover:text-blue-800 ml-1">
+                biznesmx@gmail.com
               </a>
             </p>
           </section>
@@ -106,3 +114,4 @@ export default function TermsPage() {
     </div>
   )
 }
+

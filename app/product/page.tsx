@@ -8,7 +8,7 @@ export default function ProductPage() {
   const features = [
     {
       icon: <BarChart3 className="h-6 w-6" />,
-      title: "Gestión de Inventario IA",
+      title: "Punto de Venta & Gestión de Inventario IA",
       description: "Control inteligente de stock con predicciones automáticas y alertas de reposición.",
     },
     {
@@ -24,7 +24,7 @@ export default function ProductPage() {
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Calendario y Citas",
-      description: "Programa y gestiona citas con sincronización automática.",
+      description: "Gestiona citas y tareas con nuestro calendario, totalmente integrado con Google Calendar.",
     },
     {
       icon: <Zap className="h-6 w-6" />,
@@ -40,11 +40,11 @@ export default function ProductPage() {
 
   const benefits = [
     "Automatización completa de procesos",
-    "Integración con más de 50 herramientas",
-    "Soporte 24/7 en español",
+    "Soporte 24/7",
     "Actualizaciones automáticas",
-    "Seguridad empresarial",
+    "Seguridad y respaldo en la nube",
     "Escalabilidad ilimitada",
+    "Integración ecommerce (Shopify)",
   ]
 
   return (
@@ -69,31 +69,15 @@ export default function ProductPage() {
       <section className="py-20 bg-[#F5F5F7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            La plataforma todo-en-uno para{" "}
+            Tu negocio, siempre{" "}
             <span className="bg-gradient-to-r from-[#5DADEC] via-[#9B8AFB] to-[#6EE7B7] bg-clip-text text-transparent">
-              hacer crecer tu negocio
+              conectado, organizado y creciendo.
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Biznes combina inteligencia artificial, automatización y herramientas empresariales en una sola plataforma
             diseñada para pequeñas y medianas empresas.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
-              className="px-8 py-4 bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Comenzar gratis
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
-              }
-              className="px-8 py-4 text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Ver demo
-            </button>
-          </div>
         </div>
       </section>
 
@@ -129,7 +113,7 @@ export default function ProductPage() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">¿Por qué elegir Biznes?</h2>
               <p className="text-xl text-gray-600 mb-8">
-                Más que una herramienta, Biznes es tu socio estratégico para el crecimiento empresarial.
+                Más que una herramienta, Biznes es tu socio y consejero estratégico para el crecimiento empresarial.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -142,24 +126,24 @@ export default function ProductPage() {
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-xl">
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#60A5FA] mb-2">+10,000</div>
-                <div className="text-gray-600 mb-6">Empresas confían en Biznes</div>
+                <div className="text-4xl font-bold text-[#60A5FA] mb-2">+50</div>
+                <div className="text-gray-600 mb-6">Negocios confían en Biznes.</div>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-gray-900">99.9%</div>
-                    <div className="text-sm text-gray-600">Uptime</div>
+                    <div className="text-sm text-gray-600">Disponibilidad</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-gray-900">24/7</div>
                     <div className="text-sm text-gray-600">Soporte</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">50+</div>
+                    <div className="text-2xl font-bold text-gray-900">3+</div>
                     <div className="text-sm text-gray-600">Integraciones</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">30 días</div>
-                    <div className="text-sm text-gray-600">Prueba gratis</div>
+                    <div className="text-2xl font-bold text-gray-900">Demo</div>
+                    <div className="text-sm text-gray-600">Gratis</div>
                   </div>
                 </div>
               </div>
@@ -169,18 +153,25 @@ export default function ProductPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#60A5FA] to-[#38BDF8]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">¿Listo para transformar tu negocio?</h2>
-          <p className="text-xl text-white/80 mb-8">Únete a miles de empresarios que ya están creciendo con Biznes.</p>
-          <button
-            onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
-            className="px-8 py-4 bg-white text-[#60A5FA] hover:bg-gray-50 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            Comenzar ahora - Es gratis
-          </button>
+      <section className="py-27">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center bg-gradient-to-r from-[#8cc5f6] to-[#90cee0] rounded-2xl p-6 sm:p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4">¿Listo para transformar tu negocio?</h2>
+            <p className="mb-6 opacity-90">
+              Únete a más empresarios que ya confían en Biznes para hacer crecer sus negocios.
+            </p>
+            <Link
+              href="https://app.biznes.mx/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#60A5FA] px-6 py-3 rounded-full font-medium hover:bg-gray-50 transition-colors"
+            >
+              Comenzar Ahora
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   )
 }
+

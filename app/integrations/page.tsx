@@ -8,11 +8,11 @@ export default function IntegrationsPage() {
   const integrations = [
     {
       name: "Shopify",
-      description: "Sincroniza tu inventario, pedidos y productos automáticamente con tu tienda Shopify.",
-      logo: "/shopify-logo.png",
+      description: "Sincroniza tu inventario, pedidos y productos con tu tienda Shopify.",
+      logo: "/shopify.png",
       features: [
-        "Sincronización automática de inventario",
-        "Gestión de pedidos en tiempo real",
+        "lleva tu inventario shopify en Biznes",
+        "Gestión de tu tienda desde Biznes y shopify",
         "Actualización de precios automática",
         "Reportes unificados de ventas",
       ],
@@ -22,11 +22,11 @@ export default function IntegrationsPage() {
     {
       name: "Mercado Pago",
       description: "Procesa pagos de forma segura y gestiona tus transacciones desde una sola plataforma.",
-      logo: "/mercadopago-logo.png",
+      logo: "/mercadopago.png",
       features: [
         "Procesamiento seguro de pagos",
-        "Múltiples métodos de pago",
-        "Conciliación automática",
+        "Visualiza todos tus pagos de Mercado Pago en Biznes",
+        "Control automático de tus pagos y cobros",
         "Reportes financieros detallados",
       ],
       status: "Disponible",
@@ -62,6 +62,7 @@ export default function IntegrationsPage() {
         </div>
       </header>
 
+      {/* Hero Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -73,6 +74,7 @@ export default function IntegrationsPage() {
         </div>
       </section>
 
+      {/* Integrations Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -81,26 +83,38 @@ export default function IntegrationsPage() {
                 key={index}
                 className="bg-white rounded-xl border border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-300"
               >
+                {/* Header: Logo + Name + Status + Category */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">{integration.name.charAt(0)}</span>
+                    {/* Logo */}
+                    <div className="w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+                      <Image
+                        src={integration.logo}
+                        alt={integration.name}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                      />
                     </div>
+                    {/* Name + Status */}
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">{integration.name}</h3>
-                      <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">
+                      <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full mt-1">
                         {integration.status}
                       </span>
                     </div>
                   </div>
+                  {/* Category */}
                   <span className="px-3 py-1 text-sm font-medium rounded-full bg-gray-100 text-gray-800">
                     {integration.category}
                   </span>
                 </div>
 
+                {/* Description */}
                 <p className="text-gray-600 mb-6">{integration.description}</p>
 
-                <div className="space-y-3 mb-6">
+                {/* Features */}
+                <div className="space-y-3">
                   {integration.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-3">
                       <Check className="h-5 w-5 text-gray-600 flex-shrink-0" />

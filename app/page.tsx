@@ -62,18 +62,20 @@ function SiteHeader() {
           <Link href="#pricing" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
             Precios
           </Link>
-          <Link href="#contact" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
+          <Link href="/contact" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
             Contacto
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-          <Link href="#" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm font-medium">
+          <Link href="https://app.biznes.mx/login?redirect_url=https%3A%2F%2Fapp.biznes.mx%2F" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm font-medium">
             Iniciar Sesión
           </Link>
+          <Link href="https://app.biznes.mx/register">
           <Button className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             Comenzar
           </Button>
+          </Link>
         </div>
 
         <button
@@ -141,7 +143,7 @@ function Hero() {
     setIsSubmitting(true)
     try {
       const result = await fetch(
-        (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://app.biznes.mx") + "/book/demo",
+        "https://app.biznes.mx/book/demo",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -242,11 +244,11 @@ function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 text-xs sm:text-sm text-[#6E6E73] justify-center">
               <div className="flex items-center gap-2">
                 <Check className="h-3 w-3 sm:h-4 sm:w-4 text-[#6EE7B7] flex-shrink-0" />
-                <span>Prueba gratuita</span>
+                <span>Prueba Demo</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="h-3 w-3 sm:h-4 sm:w-4 text-[#6EE7B7] flex-shrink-0" />
-                <span>Sin configuración</span>
+                <span>Lista para usar</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="h-3 w-3 sm:h-4 sm:w-4 text-[#6EE7B7] flex-shrink-0" />
@@ -275,8 +277,8 @@ function Features() {
   const features = [
     {
       icon: <Brain className="h-5 w-5" />,
-      title: "Gestión de Inventario IA",
-      description: "Mantén tu inventario actualizado, predice reabastecimientos y destaca los productos más rentables.",
+      title: "Punto de Venta e Invenario",
+      description: "Vende rápido, controla tu inventario y potencia tus productos más rentables.",
     },
     {
       icon: <Network className="h-5 w-5" />,
@@ -286,22 +288,22 @@ function Features() {
     {
       icon: <Shield className="h-5 w-5" />,
       title: "Clientes y Proveedores",
-      description: "Identifica a tus mejores clientes y entiende sus hábitos de compra.",
+      description: "Identifica a tus mejores clientes, entiende sus hábitos, crea cotizaciones al instante y compara proveedores fácilmente.",
     },
     {
       icon: <Cpu className="h-5 w-5" />,
       title: "Reportes Inteligentes",
-      description: "Obtén insights claros que te indican exactamente qué acciones tomar.",
+      description: "Obtén reportes claros que te indican exactamente qué acciones tomar.",
     },
     {
       icon: <Calendar className="h-5 w-5" />,
       title: "Calendario y Citas",
-      description: "Organiza tus citas y tareas en un solo lugar con recordatorios automáticos.",
+      description: "Gestiona citas y tareas con nuestro calendario, totalmente integrado con Google Calendar.",
     },
     {
       icon: <MessageSquare className="h-5 w-5" />,
       title: "Asistente IA",
-      description: "Haz cualquier consulta sobre tu negocio y recibe respuestas instantáneas.",
+      description: "Haz cualquier consulta sobre tu negocio, recibe respuestas instantáneas y activa notificaciones inteligentes que te guían a tomar mejores decisiones.",
     },
   ]
 
@@ -320,7 +322,7 @@ function Features() {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed px-4 sm:px-0">
-            Herramientas inteligentes que se adaptan a tu forma de trabajar
+            Todas nuestras herramientas cuentan con funcionalidades de IA y se adaptan a tu forma de trabajar.
           </p>
         </div>
 
@@ -358,7 +360,7 @@ function FeatureCard({
   onHover: () => void
   onLeave: () => void
 }) {
-  const isInventoryCard = title === "Gestión de Inventario IA"
+  const isInventoryCard = title === "Punto de Venta e Invenario"
   const isCommerceCard = title === "E-commerce Integrado"
   const isClientsCard = title === "Clientes y Proveedores"
   const isCalendarCard = title === "Calendario y Citas"
@@ -793,8 +795,8 @@ function AIChat() {
                       IA Empresarial
                     </span>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    {!isActive ? (
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                    {!isActive && messages.length === 0 ? (
                       <Button
                         onClick={startDemo}
                         className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
@@ -802,63 +804,65 @@ function AIChat() {
                         <Brain className="h-4 w-4 mr-2" />
                         Iniciar Demo Automático
                       </Button>
+                    ) : isActive ? (
+                      <>
+                        <div className="flex items-center gap-2 text-[#5DADEC] justify-center px-6 sm:px-8 py-3">
+                          <div className="w-2 h-2 bg-[#5DADEC] rounded-full animate-pulse" />
+                          <span className="text-xs sm:text-sm font-medium">Demo en progreso...</span>
+                        </div>
+                        <Button
+                          asChild
+                          className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
+                        >
+                          <a href="https://app.biznes.mx/register">¡Comienza ya!</a>
+                        </Button>
+                        <Button
+                          onClick={resetDemo}
+                          variant="outline"
+                          className="rounded-full border-2 border-[#60A5FA]/5 text-[#1C1C1E] px-6 sm:px-8 py-3 font-medium hover:shadow-lg transition-all duration-300 bg-transparent w-full sm:w-auto text-sm sm:text-base md:text-base"
+                        >
+                          Reiniciar Demo
+                        </Button>
+                      </>
                     ) : (
-                      <div className="flex items-center gap-2 text-[#5DADEC] justify-center">
-                        <div className="w-2 h-2 bg-[#5DADEC] rounded-full animate-pulse" />
-                        <span className="text-xs sm:text-sm font-medium">Demo en progreso...</span>
-                      </div>
-                    )}
-                    {messages.length > 0 && (
-                      <Button
-                        className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 max-w-xs sm:w-auto mx-auto text-sm sm:text-base md:text-base"
-                        onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
-                      >
-                        ¡Comienza ya!
-                      </Button>
-                    )}
-                    {messages.length > 0 && (
-                      <Button
-                        onClick={resetDemo}
-                        variant="outline"
-                        className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 max-w-xs sm:w-auto mx-auto text-sm sm:text-base md:text-base"
-                      >
-                        ¡Comienza ya!
-                      </Button>
-                    )}
-                    {messages.length > 0 && (
-                      <Button
-                        onClick={resetDemo}
-                        variant="outline"
-                        className="rounded-full border-2 border-[#60A5FA]/5 text-[#1C1C1E] px-4 sm:px-6 md:px-8 py-3 font-medium hover:shadow-lg transition-all duration-300 bg-transparent w-full sm:w-auto text-sm sm:text-base md:text-base"
-                      >
-                        Reiniciar Demo
-                      </Button>
+                      <>
+                        <Button
+                          asChild
+                          className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
+                        >
+                          <a href="https://app.biznes.mx/register">¡Comienza ya!</a>
+                        </Button>
+                        <Button
+                          onClick={resetDemo}
+                          variant="outline"
+                          className="rounded-full border-2 border-[#60A5FA]/5 text-[#1C1C1E] px-6 sm:px-8 py-3 font-medium hover:shadow-lg transition-all duration-300 bg-transparent w-full sm:w-auto text-sm sm:text-base md:text-base"
+                        >
+                          Reiniciar Demo
+                        </Button>
+                      </>
                     )}
                   </div>
                 </div>
               ) : (
-                <div className="text-center space-y-3 sm:space-y-4 py-4">
-                  <div className="inline-flex items-center gap-2 text-[#6E6E73]">
-                    <Brain className="h-5 w-5" />
-                    <span className="font-medium">¡Demo completado!</span>
-                  </div>
-                  <p className="text-sm text-[#6E6E73] mb-4">
-                    ¿Te gustó lo que viste? Obtén acceso completo a nuestro asistente IA y todas las herramientas
-                    empresariales
+                <div className="text-center space-y-4">
+                  <div className="text-lg font-semibold text-[#1C1C1E] mb-4">¡Demo completado! 🎉</div>
+                  <p className="text-[#6B7280] mb-6">
+                    Has visto cómo StreamlineAI puede transformar tu negocio con insights inteligentes y automatización
+                    avanzada.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                     <Button
-                      className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 max-w-xs sm:w-auto mx-auto text-sm sm:text-base md:text-base"
-                      onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
+                      asChild
+                      className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
                     >
-                      ¡Comienza ya!
+                      <a href="https://app.biznes.mx/register">¡Comienza ya!</a>
                     </Button>
                     <Button
                       onClick={resetDemo}
                       variant="outline"
-                      className="rounded-full border border-[#60A5FA]/5 text-[#1C1C1E] px-3 sm:px-4 md:px-6 py-2 sm:py-3 font-medium hover:bg-[#60A5FA]/5 transition-all duration-300 bg-transparent max-w-xs sm:w-auto mx-auto text-sm sm:text-base md:text-base"
+                      className="rounded-full border-2 border-[#60A5FA]/5 text-[#1C1C1E] px-6 sm:px-8 py-3 font-medium hover:shadow-lg transition-all duration-300 bg-transparent w-full sm:w-auto text-sm sm:text-base md:text-base"
                     >
-                      Ver Demo Otra Vez
+                      Reiniciar Demo
                     </Button>
                   </div>
                 </div>
@@ -908,7 +912,8 @@ function Pricing() {
                 "Chat con IA",
                 "$100 MXN en créditos IA",
               ]}
-              cta="Comenzar Gratis"
+              cta="Comenzar"
+              actionurl="https://app.biznes.mx/register"
               highlighted={false}
             />
           </div>
@@ -928,6 +933,7 @@ function Pricing() {
                 "Integraciones premium",
               ]}
               cta="Crecer Ahora"
+              actionurl="https://app.biznes.mx/register"
               highlighted={true}
             />
           </div>
@@ -947,6 +953,7 @@ function Pricing() {
                 "Onboarding dedicado",
               ]}
               cta="Contactar Ventas"
+              actionurl="https://api.whatsapp.com/send?phone=528123711117&text=Hola,%20quiero%20más%20información%20sobre%20el%20plan%20Empresarial."
               highlighted={false}
             />
           </div>
@@ -957,6 +964,7 @@ function Pricing() {
 }
 
 function PlanCard({
+  actionurl,
   name,
   price,
   cadence,
@@ -965,6 +973,7 @@ function PlanCard({
   cta,
   highlighted,
 }: {
+  actionurl?: string
   name: string
   price: string
   cadence: string
@@ -1017,6 +1026,7 @@ function PlanCard({
               : "bg-gradient-to-r from-[#60A5FA]/20 to-[#38BDF8]/20 hover:from-[#60A5FA]/30 hover:to-[#38BDF8]/30 text-[#1C1C1E] border border-transparent hover:border-[#60A5FA]/30"
           }`}
           variant={highlighted ? "default" : "ghost"}
+          onClick={() => window.open(actionurl, "_blank")}
         >
           {cta}
         </Button>
@@ -1038,7 +1048,7 @@ function CTA() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#6E6E73] max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-            Únete a miles de emprendedores que ya están creciendo con nuestra plataforma inteligente
+            Únete a más empresarios que ya están creciendo con nuestra plataforma inteligente
           </p>
           <div className="flex flex-col gap-2 sm:gap-3 md:flex-row md:gap-2 justify-center px-4 sm:px-0">
             <Button
