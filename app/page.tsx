@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Link from "next/link"
-import { useState } from "react"
-import Image from "next/image"
+import type React from "react";
+import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Check,
@@ -18,16 +18,28 @@ import {
   MessageSquare,
   Menu,
   X,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
     </svg>
-  )
+  );
 }
 
 export default function LandingPage() {
@@ -41,40 +53,59 @@ export default function LandingPage() {
       <CTA />
       <SiteFooter />
     </div>
-  )
+  );
 }
 
 /* Header */
 function SiteHeader() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#5DADEC]/20 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         <div className="flex items-center space-x-2">
-          <Image src="/biznes-logo.png" alt="Biznes" width={100} height={26} className="h-5 sm:h-6 w-auto" priority />
+          <Image
+            src="/biznes-logo.png"
+            alt="Biznes"
+            width={100}
+            height={26}
+            className="h-5 sm:h-6 w-auto"
+            priority
+          />
         </div>
 
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <Link href="#features" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
+          <Link
+            href="#features"
+            className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base"
+          >
             Soluciones
           </Link>
-          <Link href="#pricing" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
+          <Link
+            href="#pricing"
+            className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base"
+          >
             Precios
           </Link>
-          <Link href="/contact" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base">
+          <Link
+            href="/contact"
+            className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm lg:text-base"
+          >
             Contacto
           </Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-          <Link href="https://app.biznes.mx/login?redirect_url=https%3A%2F%2Fapp.biznes.mx%2F" className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm font-medium">
+          <Link
+            href="https://app.biznes.mx/login?redirect_url=https%3A%2F%2Fapp.biznes.mx%2F"
+            className="text-[#6E6E73] hover:text-[#5DADEC] transition-colors text-sm font-medium"
+          >
             Iniciar Sesión
           </Link>
           <Link href="https://app.biznes.mx/register">
-          <Button className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Comenzar
-          </Button>
+            <Button className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Comenzar
+            </Button>
           </Link>
         </div>
 
@@ -83,7 +114,11 @@ function SiteHeader() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -105,7 +140,7 @@ function SiteHeader() {
               Precios
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="block text-[#6E6E73] hover:text-[#5DADEC] transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -126,47 +161,44 @@ function SiteHeader() {
         </div>
       )}
     </header>
-  )
+  );
 }
 
 /* Hero */
 function Hero() {
-  const [showDemoForm, setShowDemoForm] = useState(false)
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
+  const [showDemoForm, setShowDemoForm] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleDemoSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
+    e.preventDefault();
+    if (!email) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
-      const result = await fetch(
-        "https://app.biznes.mx/book/demo",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
-        },
-      )
+      const result = await fetch("https://app.biznes.mx/book/demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
       if (result.ok) {
-        setSubmitMessage("¡Demo agendado! Te contactaremos pronto.")
-        setEmail("")
+        setSubmitMessage("¡Demo agendado! Te contactaremos pronto.");
+        setEmail("");
         setTimeout(() => {
-          setShowDemoForm(false)
-          setSubmitMessage("")
-        }, 3000)
+          setShowDemoForm(false);
+          setSubmitMessage("");
+        }, 3000);
       } else {
-        setSubmitMessage("Error al agendar. Intenta nuevamente.")
+        setSubmitMessage("Error al agendar. Intenta nuevamente.");
       }
     } catch (error) {
-      setSubmitMessage("Error al agendar. Intenta nuevamente.")
+      setSubmitMessage("Error al agendar. Intenta nuevamente.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-white to-[#F5F5F7]">
@@ -175,12 +207,14 @@ function Hero() {
           <div className="space-y-6 sm:space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#5DADEC]/10 to-[#9B8AFB]/10 px-3 sm:px-4 py-2 text-xs sm:text-sm text-[#5DADEC] border border-[#5DADEC]/20">
               <Brain className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="hidden sm:inline">Inteligencia Artificial para Negocios</span>
+              <span className="hidden sm:inline">
+                Inteligencia Artificial para Negocios
+              </span>
               <span className="sm:hidden">IA para Negocios</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              <span className="text-[#1C1C1E]">El asistente que tu</span>
+              <span className="text-[#1C1C1E]">El agente que tu</span>
               <br />
               <span className="bg-gradient-to-r from-[#5DADEC] via-[#9B8AFB] to-[#6EE7B7] bg-clip-text text-transparent">
                 negocio necesitaba
@@ -188,15 +222,18 @@ function Hero() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-[#6E6E73] max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-              Conecta tus ventas, inventario y clientes en un solo lugar. Recibe recomendaciones inteligentes para
-              vender más, ahorrar tiempo y hacer crecer tu negocio sin complicaciones.
+              Conecta tus ventas, inventario y clientes en un solo lugar. Recibe
+              recomendaciones inteligentes para vender más, ahorrar tiempo y
+              hacer crecer tu negocio sin complicaciones.
             </p>
 
             <div className="relative flex flex-col gap-2 sm:gap-3 md:flex-row md:gap-2 justify-center px-4 sm:px-0">
               <Button
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
-                onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
+                onClick={() =>
+                  window.open("https://app.biznes.mx/register", "_blank")
+                }
               >
                 Comenzar Ahora
                 <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
@@ -259,53 +296,59 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 /* Features */
 function Features() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const handleCardHover = (index: number) => {
-    setExpandedCard(index)
-  }
+    setExpandedCard(index);
+  };
 
   const handleCardLeave = () => {
-    setExpandedCard(null)
-  }
+    setExpandedCard(null);
+  };
 
   const features = [
     {
       icon: <Brain className="h-5 w-5" />,
-      title: "Punto de Venta e Invenario",
-      description: "Vende rápido, controla tu inventario y potencia tus productos más rentables.",
+      title: "Punto de Venta e Inventario",
+      description:
+        "Vende rápido, controla tu inventario y potencia tus productos más rentables.",
     },
     {
       icon: <Network className="h-5 w-5" />,
       title: "E-commerce Integrado",
-      description: "Conecta tu tienda física con tu tienda online y sincroniza todo automáticamente.",
+      description:
+        "Conecta tu tienda física con tu tienda online y sincroniza todo automáticamente.",
     },
     {
       icon: <Shield className="h-5 w-5" />,
       title: "Clientes y Proveedores",
-      description: "Identifica a tus mejores clientes, entiende sus hábitos, crea cotizaciones al instante y compara proveedores fácilmente.",
+      description:
+        "Identifica a tus mejores clientes, entiende sus hábitos, crea cotizaciones al instante y compara proveedores fácilmente.",
     },
     {
       icon: <Cpu className="h-5 w-5" />,
       title: "Reportes Inteligentes",
-      description: "Obtén reportes claros que te indican exactamente qué acciones tomar.",
+      description:
+        "Obtén reportes claros que te indican exactamente qué acciones tomar.",
     },
     {
       icon: <Calendar className="h-5 w-5" />,
       title: "Calendario y Citas",
-      description: "Gestiona citas y tareas con nuestro calendario, totalmente integrado con Google Calendar.",
+      description:
+        "Gestiona citas y tareas con nuestro calendario, totalmente integrado con Google Calendar.",
     },
     {
       icon: <MessageSquare className="h-5 w-5" />,
       title: "Asistente IA",
-      description: "Haz cualquier consulta sobre tu negocio, recibe respuestas instantáneas y activa notificaciones inteligentes que te guían a tomar mejores decisiones.",
+      description:
+        "Haz cualquier consulta sobre tu negocio, recibe respuestas instantáneas y activa notificaciones inteligentes que te guían a tomar mejores decisiones.",
     },
-  ]
+  ];
 
   return (
     <section id="features" className="w-full py-12 sm:py-16 md:py-24 bg-white">
@@ -322,13 +365,18 @@ function Features() {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed px-4 sm:px-0">
-            Todas nuestras herramientas cuentan con funcionalidades de IA y se adaptan a tu forma de trabajar.
+            Todas nuestras herramientas cuentan con funcionalidades de IA y se
+            adaptan a tu forma de trabajar.
           </p>
         </div>
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div key={index} className="animate-fade-in-up h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div
+              key={index}
+              className="animate-fade-in-up h-full"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <FeatureCard
                 icon={feature.icon}
                 title={feature.title}
@@ -342,7 +390,7 @@ function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FeatureCard({
@@ -353,19 +401,19 @@ function FeatureCard({
   onHover,
   onLeave,
 }: {
-  icon: React.ReactNode
-  title: string
-  description: string
-  isExpanded: boolean
-  onHover: () => void
-  onLeave: () => void
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  isExpanded: boolean;
+  onHover: () => void;
+  onLeave: () => void;
 }) {
-  const isInventoryCard = title === "Punto de Venta e Invenario"
-  const isCommerceCard = title === "E-commerce Integrado"
-  const isClientsCard = title === "Clientes y Proveedores"
-  const isCalendarCard = title === "Calendario y Citas"
-  const isAIAssistantCard = title === "Asistente IA"
-  const isReportsCard = title === "Reportes Inteligentes"
+  const isInventoryCard = title === "Punto de Venta e Invenario";
+  const isCommerceCard = title === "E-commerce Integrado";
+  const isClientsCard = title === "Clientes y Proveedores";
+  const isCalendarCard = title === "Calendario y Citas";
+  const isAIAssistantCard = title === "Asistente IA";
+  const isReportsCard = title === "Reportes Inteligentes";
 
   return (
     <Card
@@ -396,7 +444,9 @@ function FeatureCard({
 
         <div
           className={`overflow-hidden transition-all duration-1000 ease-in-out flex-1 ${
-            isExpanded ? "max-h-96 sm:max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            isExpanded
+              ? "max-h-96 sm:max-h-[500px] opacity-100"
+              : "max-h-0 opacity-0"
           }`}
         >
           <CardContent className="relative px-4 sm:px-6 pb-4 sm:pb-6">
@@ -499,7 +549,10 @@ function FeatureCard({
                 {isInventoryCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -510,7 +563,10 @@ function FeatureCard({
                 {isCommerceCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -521,7 +577,10 @@ function FeatureCard({
                 {isClientsCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -532,7 +591,10 @@ function FeatureCard({
                 {isCalendarCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -543,7 +605,10 @@ function FeatureCard({
                 {isAIAssistantCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -554,7 +619,10 @@ function FeatureCard({
                 {isReportsCard && (
                   <button
                     onClick={() =>
-                      window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                      window.open(
+                        "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                        "_blank",
+                      )
                     }
                     className="w-full max-w-xs mx-auto rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >
@@ -568,21 +636,25 @@ function FeatureCard({
 
         <div
           className={`absolute bottom-2 right-2 w-2 h-2 rounded-full bg-gradient-to-r from-[#5DADEC] via-[#6BB6EF] to-[#4A90E2] transition-all duration-800 ease-in-out ${
-            isExpanded ? "opacity-100 scale-150 animate-pulse shadow-lg" : "opacity-70 scale-100"
+            isExpanded
+              ? "opacity-100 scale-150 animate-pulse shadow-lg"
+              : "opacity-70 scale-100"
           }`}
         />
       </div>
     </Card>
-  )
+  );
 }
 
 /* Auto-Questioning AI Chat Section */
 function AIChat() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [messages, setMessages] = useState<Array<{ id: string; role: string; content: string; isTyping?: boolean }>>([])
-  const [isActive, setIsActive] = useState(false)
-  const [questionsLeft, setQuestionsLeft] = useState(9)
-  const [isTyping, setIsTyping] = useState(false)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [messages, setMessages] = useState<
+    Array<{ id: string; role: string; content: string; isTyping?: boolean }>
+  >([]);
+  const [isActive, setIsActive] = useState(false);
+  const [questionsLeft, setQuestionsLeft] = useState(9);
+  const [isTyping, setIsTyping] = useState(false);
 
   const businessQuestions = [
     {
@@ -630,23 +702,23 @@ function AIChat() {
       response:
         "Sí, estás listo para expandir. Tus métricas muestran: flujo de caja positivo por 8 meses, clientes leales (70% retorno), y demanda insatisfecha en zona norte. Te recomiendo una segunda sucursal con inversión estimada de $45,000 MXN.",
     },
-  ]
+  ];
 
   const startDemo = () => {
-    if (questionsLeft <= 0) return
-    setIsActive(true)
-    setMessages([])
-    setCurrentQuestionIndex(0)
-    askNextQuestion(0)
-  }
+    if (questionsLeft <= 0) return;
+    setIsActive(true);
+    setMessages([]);
+    setCurrentQuestionIndex(0);
+    askNextQuestion(0);
+  };
 
   const askNextQuestion = (questionIndex: number) => {
     if (questionIndex >= businessQuestions.length || questionsLeft <= 0) {
-      setIsActive(false)
-      return
+      setIsActive(false);
+      return;
     }
 
-    setIsTyping(true)
+    setIsTyping(true);
 
     // Add AI question
     setTimeout(() => {
@@ -655,46 +727,46 @@ function AIChat() {
         role: "assistant",
         content: businessQuestions[questionIndex].question,
         isTyping: false,
-      }
-      setMessages((prev) => [...prev, aiQuestion])
-      setIsTyping(false)
+      };
+      setMessages((prev) => [...prev, aiQuestion]);
+      setIsTyping(false);
 
       // Simulate user thinking time, then add response
       setTimeout(() => {
-        setIsTyping(true)
+        setIsTyping(true);
         setTimeout(() => {
           const aiResponse = {
             id: `response-${Date.now()}`,
             role: "assistant",
             content: businessQuestions[questionIndex].response,
             isTyping: false,
-          }
-          setMessages((prev) => [...prev, aiResponse])
-          setIsTyping(false)
-          setQuestionsLeft((prev) => Math.max(0, prev - 1))
+          };
+          setMessages((prev) => [...prev, aiResponse]);
+          setIsTyping(false);
+          setQuestionsLeft((prev) => Math.max(0, prev - 1));
 
           // Continue to next question after delay
           setTimeout(() => {
-            const nextIndex = questionIndex + 1
-            setCurrentQuestionIndex(nextIndex)
+            const nextIndex = questionIndex + 1;
+            setCurrentQuestionIndex(nextIndex);
             if (nextIndex < businessQuestions.length && questionsLeft > 1) {
-              askNextQuestion(nextIndex)
+              askNextQuestion(nextIndex);
             } else {
-              setIsActive(false)
+              setIsActive(false);
             }
-          }, 3000)
-        }, 2000)
-      }, 1500)
-    }, 1000)
-  }
+          }, 3000);
+        }, 2000);
+      }, 1500);
+    }, 1000);
+  };
 
   const resetDemo = () => {
-    setMessages([])
-    setCurrentQuestionIndex(0)
-    setQuestionsLeft(9)
-    setIsActive(false)
-    setIsTyping(false)
-  }
+    setMessages([]);
+    setCurrentQuestionIndex(0);
+    setQuestionsLeft(9);
+    setIsActive(false);
+    setIsTyping(false);
+  };
 
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-b from-[#F5F5F7] to-white">
@@ -717,8 +789,8 @@ function AIChat() {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed px-4 sm:px-0">
-            Observa una conversación real entre un emprendedor y nuestro asistente IA. {questionsLeft} preguntas de
-            demostración disponibles.
+            Observa una conversación real entre un emprendedor y nuestro
+            asistente IA. {questionsLeft} preguntas de demostración disponibles.
           </p>
         </div>
 
@@ -730,10 +802,13 @@ function AIChat() {
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-[#5DADEC]/20 to-[#9B8AFB]/20 mb-3 sm:mb-4">
                     <Brain className="h-6 w-6 sm:h-8 sm:w-8 text-[#5DADEC]" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-[#1C1C1E] mb-2">Demo Inteligente de Negocios</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#1C1C1E] mb-2">
+                    Demo Inteligente de Negocios
+                  </h3>
                   <p className="text-sm sm:text-base text-[#6E6E73] mb-4 sm:mb-6 px-4 sm:px-0">
-                    Observa cómo nuestro asistente IA hace preguntas inteligentes sobre tu negocio y proporciona
-                    análisis detallados con datos reales.
+                    Observa cómo nuestro asistente IA hace preguntas
+                    inteligentes sobre tu negocio y proporciona análisis
+                    detallados con datos reales.
                   </p>
 
                   <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto mb-4 sm:mb-6">
@@ -761,7 +836,9 @@ function AIChat() {
                         : "bg-white text-[#1C1C1E] shadow-sm border border-gray-100"
                     }`}
                   >
-                    <p className="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-xs sm:text-sm leading-relaxed whitespace-pre-wrap">
+                      {message.content}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -808,13 +885,17 @@ function AIChat() {
                       <>
                         <div className="flex items-center gap-2 text-[#5DADEC] justify-center px-6 sm:px-8 py-3">
                           <div className="w-2 h-2 bg-[#5DADEC] rounded-full animate-pulse" />
-                          <span className="text-xs sm:text-sm font-medium">Demo en progreso...</span>
+                          <span className="text-xs sm:text-sm font-medium">
+                            Demo en progreso...
+                          </span>
                         </div>
                         <Button
                           asChild
                           className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
                         >
-                          <a href="https://app.biznes.mx/register">¡Comienza ya!</a>
+                          <a href="https://app.biznes.mx/register">
+                            ¡Comienza ya!
+                          </a>
                         </Button>
                         <Button
                           onClick={resetDemo}
@@ -830,7 +911,9 @@ function AIChat() {
                           asChild
                           className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base md:text-base"
                         >
-                          <a href="https://app.biznes.mx/register">¡Comienza ya!</a>
+                          <a href="https://app.biznes.mx/register">
+                            ¡Comienza ya!
+                          </a>
                         </Button>
                         <Button
                           onClick={resetDemo}
@@ -845,10 +928,12 @@ function AIChat() {
                 </div>
               ) : (
                 <div className="text-center space-y-4">
-                  <div className="text-lg font-semibold text-[#1C1C1E] mb-4">¡Demo completado! 🎉</div>
+                  <div className="text-lg font-semibold text-[#1C1C1E] mb-4">
+                    ¡Demo completado! 🎉
+                  </div>
                   <p className="text-[#6B7280] mb-6">
-                    Has visto cómo StreamlineAI puede transformar tu negocio con insights inteligentes y automatización
-                    avanzada.
+                    Has visto cómo StreamlineAI puede transformar tu negocio con
+                    insights inteligentes y automatización avanzada.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                     <Button
@@ -872,13 +957,16 @@ function AIChat() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 /* Pricing */
 function Pricing() {
   return (
-    <section id="pricing" className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-b from-white to-[#F5F5F7]">
+    <section
+      id="pricing"
+      className="w-full py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-b from-white to-[#F5F5F7]"
+    >
       <div className="container px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 sm:gap-6 text-center mb-12 sm:mb-16 animate-fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#5DADEC]/10 to-[#9B8AFB]/10 px-3 sm:px-4 py-2 text-xs sm:text-sm text-[#5DADEC] border border-[#5DADEC]/20">
@@ -897,7 +985,10 @@ function Pricing() {
         </div>
 
         <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <div
+            className="animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             <PlanCard
               name="Básico"
               price="$200"
@@ -917,7 +1008,10 @@ function Pricing() {
               highlighted={false}
             />
           </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div
+            className="animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <PlanCard
               name="Pro"
               price="$400"
@@ -937,7 +1031,10 @@ function Pricing() {
               highlighted={true}
             />
           </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div
+            className="animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
             <PlanCard
               name="Empresarial"
               price="Personalizado"
@@ -960,7 +1057,7 @@ function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function PlanCard({
@@ -973,14 +1070,14 @@ function PlanCard({
   cta,
   highlighted,
 }: {
-  actionurl?: string
-  name: string
-  price: string
-  cadence: string
-  description: string
-  features: string[]
-  cta: string
-  highlighted: boolean
+  actionurl?: string;
+  name: string;
+  price: string;
+  cadence: string;
+  description: string;
+  features: string[];
+  cta: string;
+  highlighted: boolean;
 }) {
   return (
     <Card
@@ -999,18 +1096,29 @@ function PlanCard({
       </div>
 
       <CardHeader className={`relative text-center p-0 pb-4 sm:pb-6`}>
-        <CardTitle className="text-xl sm:text-2xl text-[#1C1C1E] font-semibold mb-2">{name}</CardTitle>
+        <CardTitle className="text-xl sm:text-2xl text-[#1C1C1E] font-semibold mb-2">
+          {name}
+        </CardTitle>
         <div className="mb-2">
-          <span className="text-3xl sm:text-4xl font-bold text-[#1C1C1E]">{price}</span>
-          <span className="text-[#6E6E73] ml-1 text-sm sm:text-base">{cadence}</span>
+          <span className="text-3xl sm:text-4xl font-bold text-[#1C1C1E]">
+            {price}
+          </span>
+          <span className="text-[#6E6E73] ml-1 text-sm sm:text-base">
+            {cadence}
+          </span>
         </div>
-        <CardDescription className="text-[#6E6E73] text-sm sm:text-base">{description}</CardDescription>
+        <CardDescription className="text-[#6E6E73] text-sm sm:text-base">
+          {description}
+        </CardDescription>
       </CardHeader>
 
       <CardContent className="relative p-0 pb-4 sm:pb-6">
         <ul className="space-y-2 sm:space-y-3">
           {features.map((feature) => (
-            <li key={feature} className="flex items-center gap-2 sm:gap-3 text-[#6E6E73] text-sm sm:text-base">
+            <li
+              key={feature}
+              className="flex items-center gap-2 sm:gap-3 text-[#6E6E73] text-sm sm:text-base"
+            >
               <Check className="h-4 w-4 sm:h-5 sm:w-5 text-[#6EE7B7] flex-shrink-0" />
               {feature}
             </li>
@@ -1032,7 +1140,7 @@ function PlanCard({
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 /* CTA */
@@ -1048,13 +1156,16 @@ function CTA() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#6E6E73] max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
-            Únete a más empresarios que ya están creciendo con nuestra plataforma inteligente
+            Únete a más empresarios que ya están creciendo con nuestra
+            plataforma inteligente
           </p>
           <div className="flex flex-col gap-2 sm:gap-3 md:flex-row md:gap-2 justify-center px-4 sm:px-0">
             <Button
               size="lg"
               className="rounded-full bg-gradient-to-r from-[#60A5FA] to-[#38BDF8] hover:from-[#3B82F6] hover:to-[#0EA5E9] text-white px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base md:text-lg"
-              onClick={() => window.open("https://app.biznes.mx/register", "_blank")}
+              onClick={() =>
+                window.open("https://app.biznes.mx/register", "_blank")
+              }
             >
               ¡Comienza ya!
             </Button>
@@ -1063,7 +1174,10 @@ function CTA() {
               variant="outline"
               className="rounded-full bg-transparent text-gray-600 hover:bg-gray-200 hover:text-gray-700 px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-medium transition-all duration-600 ease-in-out transform hover:scale-103 text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl"
               onClick={() =>
-                window.open("https://app.biznes.mx/login?username=demo_biznes&password=biznes2025", "_blank")
+                window.open(
+                  "https://app.biznes.mx/login?username=demo_biznes&password=biznes2025",
+                  "_blank",
+                )
               }
             >
               Probar demo
@@ -1072,7 +1186,7 @@ function CTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 /* Footer */
@@ -1092,7 +1206,8 @@ function SiteFooter() {
               />
             </Link>
             <p className="text-xs sm:text-sm text-[#6E6E73] max-w-xs">
-              La plataforma inteligente que organiza tu negocio y lo hace crecer.
+              La plataforma inteligente que organiza tu negocio y lo hace
+              crecer.
             </p>
             <div className="flex items-center gap-3 sm:gap-4">
               <Link
@@ -1131,20 +1246,31 @@ function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">Producto</h3>
+            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">
+              Producto
+            </h3>
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-[#6E6E73]">
               <li>
-                <Link href="/product" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/product"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Soluciones
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="#pricing"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Precios
                 </Link>
               </li>
               <li>
-                <Link href="/integrations" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/integrations"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Integraciones
                 </Link>
               </li>
@@ -1152,20 +1278,31 @@ function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">Empresa</h3>
+            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">
+              Empresa
+            </h3>
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-[#6E6E73]">
               <li>
-                <Link href="/about" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/about"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Acerca de
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Contacto
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/support"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Soporte
                 </Link>
               </li>
@@ -1173,20 +1310,31 @@ function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">Legal</h3>
+            <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold text-[#1C1C1E]">
+              Legal
+            </h3>
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-[#6E6E73]">
               <li>
-                <Link href="/privacy" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/privacy"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Privacidad
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/terms"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Términos
                 </Link>
               </li>
               <li>
-                <Link href="/cookies" className="hover:text-[#1C1C1E] transition-colors">
+                <Link
+                  href="/cookies"
+                  className="hover:text-[#1C1C1E] transition-colors"
+                >
                   Cookies
                 </Link>
               </li>
@@ -1201,5 +1349,5 @@ function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
