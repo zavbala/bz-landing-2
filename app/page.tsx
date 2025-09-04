@@ -932,7 +932,7 @@ function AIChat() {
                     ¡Demo completado! 🎉
                   </div>
                   <p className="text-[#6B7280] mb-6">
-                    Has visto cómo StreamlineAI puede transformar tu negocio con
+                    Has visto cómo Biznes puede transformar tu negocio con
                     insights inteligentes y automatización avanzada.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
@@ -1050,7 +1050,7 @@ function Pricing() {
                 "Onboarding dedicado",
               ]}
               cta="Contactar Ventas"
-              actionurl="https://api.whatsapp.com/send?phone=528123711117&text=Hola,%20quiero%20más%20información%20sobre%20el%20plan%20Empresarial."
+              actionurl="https://api.whatsapp.com/send?phone=528123711117&text=Hola,%20quiero%20más%20información%20sobre%20el%20plan%20empresarial en Biznes."
               highlighted={false}
             />
           </div>
