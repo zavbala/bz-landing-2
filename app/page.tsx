@@ -991,7 +991,7 @@ function Pricing() {
           >
             <PlanCard
               name="Básico"
-              price="$200"
+              price="$199"
               cadence="/mes"
               description="Perfecto para empezar"
               features={[
@@ -1014,7 +1014,7 @@ function Pricing() {
           >
             <PlanCard
               name="Pro"
-              price="$400"
+              price="$399"
               cadence="/mes"
               description="Para negocios en crecimiento"
               features={[
